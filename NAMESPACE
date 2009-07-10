@@ -1,0 +1,12 @@
+import(splines, quadprog, lattice)
+
+export(SEL, rvSEL, quantSEL, comparePlot, getbinPost, knotave)
+
+S3method(print, SEL)
+S3method(predict, SEL)
+S3method(summary, SEL)
+S3method(print, summary.SEL)
+S3method(plot, SEL)
+S3method(coef, SEL)
+
+useDynLib(SEL)
