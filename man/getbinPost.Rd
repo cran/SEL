@@ -26,7 +26,7 @@
 \references{ 
    Bornkamp, B. and Ickstadt, K. (2009). A Note on B-Splines for
    Semiparametric Elicitation. \emph{The American Statistician},
-   \emph{to appear}
+   \bold{63}, 373--377
 
    Diaconis, P., and Ylvisaker, D. (1985),
    Quantifying Prior Opinion, \emph{Bayesian Statistics 2},

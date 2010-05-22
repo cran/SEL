@@ -17,7 +17,7 @@
 \references{ 
    Bornkamp, B. and Ickstadt, K. (2009). A Note on B-Splines for
    Semiparametric Elicitation. \emph{The American Statistician},
-   \emph{to appear}
+   \bold{63}, 373--377
 
    Dierckx, P. (1993), \emph{Curve and Surface
    Fitting with Splines}, Clarendon Press

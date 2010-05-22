@@ -5,30 +5,21 @@
 Semiparametric Elicitation of a bounded parameter.
 }
 \description{
-This package implements a novel method for transferring expert
-statements about an uncertain bounded quantity into a probability
-distribution (see Bornkamp and Ickstadt (2009) for a detailed
-description). This is a challenging problem, as these statements are
-sparse and imprecise. We approach both issues by penalization, such that
-the final distribution will contain the stated information, but subject
-to that distributes its probability mass as uniformly as possible. As a
-functional basis for the modelled distribution we use linear
-combinations of B-splines. B-splines are highly flexible, have excellent
-shape-preserving properties and are also well suited for evaluation,
-differentiation and integration.
-
-The package provides methods for fitting the expert's distribution as
-well as methods for evaluating density and probability distribution
-function of the underlying distribution as well as methods for drawing
-random numbers from the distribution and calculating quantiles of the
-expert's density.
+This package implements a novel method for fitting a bounded probability
+distribution to quantiles stated for example by an expert (see Bornkamp
+and Ickstadt (2009)).  For this purpose B-splines are used, and the
+density is obtained by penalized least squares based on a Brier entropy
+penalty.  The package provides methods for fitting the distribution as
+well as methods for evaluating the underlying density and cdf. In
+addition methods for plotting the distribution, drawing random numbers
+and calculating quantiles of the obtained distribution are provided.
 }
 \details{
 \tabular{ll}{
 Package: \tab SEL\cr
 Type: \tab Package\cr
-Version: \tab 1.0-1\cr
-Date: \tab 2009-07-10\cr
+Version: \tab 1.0-2\cr
+Date: \tab 2010-05-21\cr
 License: \tab GPL\cr
 }
 }
@@ -40,7 +31,7 @@ Maintainer: Bjoern Bornkamp <bornkamp@statistik.tu-dortmund.de>
 \references{ 
    Bornkamp, B. and Ickstadt, K. (2009). A Note on B-Splines for
    Semiparametric Elicitation. \emph{The American Statistician},
-   \emph{to appear}
+   \bold{63}, 373--377
 
    O'Hagan A., Buck C. E., Daneshkhah, A., Eiser, R., Garthwaite,
    P., Jenkinson, D., Oakley, J. and Rakow, T. (2006), \emph{Uncertain
@@ -49,7 +40,7 @@ Maintainer: Bjoern Bornkamp <bornkamp@statistik.tu-dortmund.de>
    Garthwaite, P., Kadane, J. O'Hagan, A. (2005), Statistical
    Methods for Eliciting Probability Distributions,
    \emph{Journal of the American Statistical Association},
-   \bold{100}, 680--701.
+   \bold{100}, 680--701
 
    Dierckx, P. (1993), \emph{Curve and Surface
    Fitting with Splines}, Clarendon Press.

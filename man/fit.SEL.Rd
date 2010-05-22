@@ -26,7 +26,7 @@ fit.SEL(N, alpha, P, A, b, gamma, dplus = 0)
 \references{ 
    Bornkamp, B. and Ickstadt, K. (2009). A Note on B-Splines for
    Semiparametric Elicitation. \emph{The American Statistician},
-   \emph{to appear}
+   \bold{63}, 373--377
 
    Goldfarb, D., and Idnani, A. (1982), Dual
    and Primal-Dual Methods for Solving Strictly Convex Quadratic

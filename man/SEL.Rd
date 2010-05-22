@@ -2,18 +2,19 @@
 \alias{SEL}
 \title{ Semiparametric Elicitation of a bounded parameter }
 \description{
-  Fits a distribution to expert statements using penalized B-splines.
+  Fits a distribution to quantiles (stated for example by an expert)
+  using B-splines with a Brier entropy penalty.
 
-  There exists a \code{print} and a
-  \code{summary} method to display details of the
-  fitted SEL object. The fitted density (or cdf) can be displayed with
-  the \code{\link[=plot.SEL]{plot}} method.  Different SEL objects can be
-  displayed in one plot with the \code{\link{comparePlot}} function. The
-  fitted density (or cdf) can be evaluated with the \code{\link[=predict.SEL]{predict}}
-  method. The \code{coef} method extracts the coefficients of the fitted
-  B-spline basis. The \code{\link{quantSEL}} function calculates
-  quantiles of the fitted distribution and the \code{\link{rvSEL}}
-  function generates random variables from a fitted SEL object.
+  There exists a \code{print} and a \code{summary} method to display
+  details of the fitted SEL object. The fitted density (or cdf) can be
+  displayed with the \code{\link[=plot.SEL]{plot}} method.  Different
+  SEL objects can be displayed in one plot with the
+  \code{\link{comparePlot}} function. The fitted density (or cdf) can be
+  evaluated with the \code{\link[=predict.SEL]{predict}} method. The
+  \code{coef} method extracts the coefficients of the fitted B-spline
+  basis. The \code{\link{quantSEL}} function calculates quantiles of the
+  fitted distribution and the \code{\link{rvSEL}} function generates
+  random variables from a fitted SEL object.
   
 }
 \usage{
@@ -77,7 +78,7 @@
 \references{ 
    Bornkamp, B. and Ickstadt, K. (2009). A Note on B-Splines for
    Semiparametric Elicitation. \emph{The American Statistician},
-   \emph{to appear}
+   \bold{63}, 373--377
 
    O'Hagan A., Buck C. E., Daneshkhah, A., Eiser, R., Garthwaite,
    P., Jenkinson, D., Oakley, J. and Rakow, T. (2006), \emph{Uncertain
@@ -164,7 +165,7 @@ x <- c(2,10,15)
 a1 <- 1;a2 <- 10;b1 <- 15;b2 <- 5
 mu <- pmixbeta(x, a1, b1, a2, b2)
 set.seed(1) # simulate experts statements
-y <- rnorm(length(mu), mu, sqrt(y*(1-y)*0.05^2))
+y <- rnorm(length(mu), mu, sqrt(mu*(1-mu)*0.05^2))
 thet <- SEL(x, y, d = 4, Delta = 0.03, bounds = c(0, 20), inknts = x)
 plot(thet, ylim = c(0,0.25))
 curve(dmixbeta(x, a1, b1, a2, b2), add=TRUE, col="red")
@@ -189,7 +190,7 @@ ptriang <- function(x,m,a,b){
 x <- c(1,2,4)
 mu <- ptriang(x, 1, 0, 5)
 set.seed(1) # simulate experts statements
-y <- rnorm(length(mu), mu, sqrt(y*(1-y)*0.05^2))
+y <- rnorm(length(mu), mu, sqrt(mu*(1-mu)*0.05^2))
 sig <- SEL(x, y, d = 4, Delta = 0.03, bounds = c(0, 5),
        inknts = x, mode = 1, constr="unimodal")
 plot(sig, ylim=c(0,0.4))

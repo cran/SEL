@@ -27,7 +27,7 @@
 }
 \references{ 
    Bornkamp, B. and Ickstadt, K. (2009). A Note on B-Splines for
-   Semiparametric Elicitation. \emph{The American Statistician}, \emph{to appear}
+   Semiparametric Elicitation. \emph{The American Statistician}, \bold{63}, 373--377
  }
 \seealso{ \code{\link{uniroot}}, \code{\link[quadprog]{solve.QP}} }
 \author{ Bjoern Bornkamp }

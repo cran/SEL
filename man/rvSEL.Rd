@@ -27,7 +27,7 @@ rvSEL(n, object, nPoints = 1000)
 }
 \references{ 
    Bornkamp, B. and Ickstadt, K. (2009). A Note on B-Splines for
-   Semiparametric Elicitation. \emph{The American Statistician}, \emph{to appear}
+   Semiparametric Elicitation. \emph{The American Statistician}, \bold{63}, 373--377
 }
 \author{ Bjoern Bornkamp }
 \seealso{ \code{\link{SEL}}, \code{\link{splinefun}}  }
