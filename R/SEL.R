@@ -338,7 +338,7 @@ print.SEL <- function(x, ...){
   } else {
     foo <- function(y, x) x$pistar(y)^2
     div <- try(integrate(foo, x$bounds[1], x$bounds[2], x=x)$value)
-    if(class(div) == "try-error"){
+    if(inherits(div, "try-error")){
       cat("Brier Neg-Entropy: ", ent, "\n")      
     } else {
       cat("Brier divergence to pistar: ", div+ent-2*x$dplus%*%fit, "\n")
@@ -385,7 +385,7 @@ predict.SEL <- function(object, newdata = seq(object$bounds[1],
   knts <- c(rep(object$bounds[1],object$nord), object$inknts,
             rep(object$bounds[2],object$nord))
   X <- splineDesign(newdata, knots = knts, ord = object$nord, 
-              deriv = rep(deriv, length(newdata)), outer.ok = TRUE)
+              derivs = rep(deriv, length(newdata)), outer.ok = TRUE)
   as.numeric(X%*%object$coefs)
 }
 

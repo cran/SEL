@@ -10,3 +10,6 @@ S3method(plot, SEL)
 S3method(coef, SEL)
 
 useDynLib(SEL)
+
+importFrom("stats", "dbeta", "dbinom", "integrate", "pbeta", "predict",
+           "runif", "splinefun", "uniroot")
