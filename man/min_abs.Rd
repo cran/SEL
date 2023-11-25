@@ -1,5 +1,5 @@
-\name{min.abs}
-\alias{min.abs}
+\name{min_abs}
+\alias{min_abs}
 \title{ Find gamma given Delta }
 \description{
   Find gamma so that squareroot of average squared distance of fitted
@@ -9,7 +9,7 @@
   source code.
 }
 \usage{
-  min.abs(Delta, N, alpha, P, A, b, lb, ub, dplus = 0)
+  min_abs(Delta, N, alpha, P, A, b, lb, ub, dplus = 0)
 }
 \arguments{
   \item{Delta}{ Average root of squared error to be achieved with fitted distribution. }

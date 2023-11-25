@@ -1,3 +1,7 @@
+2023-11-25 Bjoern Bornkamp (Version 1.0-4)
+    * Changed name of min.abs function to min_abs
+    * Other minor fixes to comply with CRAN
+
 2010-05-21 Bjoern Bornkamp (Version 1.0-2)
     * Updated American Statistician reference,
     and minor error in example for SEL function.

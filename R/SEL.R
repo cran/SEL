@@ -1,3 +1,4 @@
+
 SEL <- function(x, alpha, bounds = c(0,1), d = 4, inknts = x, N,
                 gamma, Delta, fitbnds = c(1e-8, 10)*diff(bounds),
                 pistar = NULL,
@@ -63,7 +64,7 @@ SEL <- function(x, alpha, bounds = c(0,1), d = 4, inknts = x, N,
     dplus <- 0
   }
   if(missing(gamma)){
-    gamma <- min.abs(Delta, X, alpha, P, A,
+    gamma <- min_abs(Delta, X, alpha, P, A,
                      bvec, fitbnds[1], fitbnds[2], dplus)
   }
   sol <- fit.SEL(X, alpha, P, A, bvec, gamma, dplus)
@@ -193,7 +194,7 @@ fit.SEL <- function(N, alpha, P, A, b, gamma, dplus = 0){
   solve.QP(Dmat=D, dvec=d, bvec=b, Amat=A, meq=2)$solution
 }
 
-min.abs <- function(Delta, N, alpha, P, A, b, lb, ub, dplus = 0){
+min_abs <- function(Delta, N, alpha, P, A, b, lb, ub, dplus = 0){
   min.foo <- function(gamma, Delta, N, alpha, P, A, b, dplus){
     ff <- fit.SEL(N, alpha, P, A, b, gamma, dplus)
     mean((alpha-N%*%ff)^2) - Delta^2
@@ -258,7 +259,7 @@ comparePlot <- function (..., type = c("density", "cdf"), deriv, points = TRUE,
     xa <- objs[[1]]$xalpha
     plotvec <- namvec <- numeric(n * nobj)
     for (i in 1:nobj) {
-        if (class(objs[[i]]) != "SEL")
+      if (!inherits(objs[[i]], "SEL"))
           stop("need objects of class SEL")
         if ((objs[[i]]$bounds[1] != x0) | (objs[[i]]$bounds[2] != x1)) {
             stop("bounds of all SEL-objects need to be the same")
@@ -400,7 +401,7 @@ quantSEL <- function(q, object, nPoints = 1000){
   #           to evaluate cdf
   if(any(q < 0) | any(q > 1))
     stop("q values need to be in [0,1]")
-  if(class(object) != "SEL")
+  if(!inherits(object, "SEL"))
     stop("Need object of class SEL in 'object'")
   bnds <- object$bounds
   sq <- seq(bnds[1], bnds[2], length = nPoints)
@@ -435,7 +436,7 @@ updWeights <- function(F, k, n){
 # posterior for binomial data
 getbinPost <- function(x, object, k, n, type = c("density", "cdf"),
                        rel.tol = .Machine$double.eps^0.5){
-  if(class(object) != "SEL")
+  if(!inherits(object, "SEL"))
     stop("Need object of class SEL in 'object'")
   bnds <- object$bounds
   if(bnds[1] != 0 | bnds[2] != 1)

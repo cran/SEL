@@ -1,8 +1,8 @@
 Package: SEL
 Type: Package
 Title: Semiparametric Elicitation
-Version: 1.0-3
-Date: 2022-04-04
+Version: 1.0-4
+Date: 2023-11-25
 Depends: splines, quadprog, lattice
 Author: Bjoern Bornkamp
 Maintainer: Bjoern Bornkamp <bbnkmp@mail.de>
@@ -17,7 +17,7 @@ Description: Implements a method for fitting a bounded probability
         numbers and calculating quantiles of the obtained distribution
         are provided.
 License: GPL
-Packaged: 2022-04-04 18:35:05 UTC; bjoern
+Packaged: 2023-11-25 15:24:52 UTC; bjoern
 Repository: CRAN
-Date/Publication: 2022-04-04 21:50:04 UTC
+Date/Publication: 2023-11-25 15:50:02 UTC
 NeedsCompilation: yes
